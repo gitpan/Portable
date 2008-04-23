@@ -20,4 +20,4 @@ requires:
   List::Util: 1.19
   Parse::CPAN::Meta: 0.03
   perl: 5.8.0
-version: 0.03
+version: 0.04
