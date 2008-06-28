@@ -60,7 +60,7 @@ use File::Spec        ();
 use List::Util        ();
 use Parse::CPAN::Meta ();
 
-our $VERSION = '0.05';
+our $VERSION = '0.06';
 
 # This variable is provided exclusively for the
 # use of test scripts.
@@ -96,7 +96,7 @@ sub import {
 sub apply {
 	# default %applied;
 	my $class   = shift;
-	my $self    = _default();
+	my $self    = $class->default;
 	my %apply   = map { $_ => 1 } @_;
 	if ( $apply{Config} and ! $applied{Config} ) {
 		$self->config->apply($self);
@@ -106,6 +106,14 @@ sub apply {
 		$self->cpan->apply($self);
 		$applied{CPAN} = 1;
 	}
+	if ( $apply{HomeDir} and ! $applied{HomeDir} and $self->homedir ) {
+		$self->homedir->apply($self);
+		$applied{HomeDir} = 1;
+	}
+
+	# We don't need to do anything for CPAN::Mini.
+	# It will load us instead (I think)
+
 	return 1;
 }
 
@@ -142,16 +150,28 @@ sub new {
 	require Portable::Config;
 	$self->{Config} = Portable::Config->new( $self );
 
-	# Optional support for CPAN/Config.pm
+	# Optional support for CPAN::Config
 	if ( $self->portable_cpan ) {
 		require Portable::CPAN;
 		$self->{CPAN} = Portable::CPAN->new( $self );
 	}
 
+	# Optional support for File::HomeDir
+	if ( $self->portable_homedir ) {
+		require Portable::HomeDir;
+		$self->{HomeDir} = Portable::HomeDir->new( $self );
+	}
+
+	# Optional support for CPAN::Mini
+	if ( $self->portable_minicpan ) {
+		require Portable::minicpan;
+		$self->{minicpan} = Portable::minicpan->new( $self );
+	}
+
 	return $self;
 }
 
-sub _default {
+sub default {
 	# state $cache;
 	return $cache if $cache;
 
@@ -232,6 +252,14 @@ sub portable_config {
 	$_[0]->{portable}->{Config};
 }
 
+sub portable_homedir {
+	$_[0]->{portable}->{HomeDir};
+}
+
+sub portable_minicpan {
+	$_[0]->{portable}->{minicpan};
+}
+
 sub portable_env {
 	$_[0]->{portable}->{Env};
 }
@@ -242,6 +270,14 @@ sub config {
 
 sub cpan {
 	$_[0]->{CPAN};
+}
+
+sub homedir {
+	$_[0]->{HomeDir};
+}
+
+sub minicpan {
+	$_[0]->{minicpan};
 }
 
 sub env {

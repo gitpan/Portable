@@ -7,9 +7,12 @@ inc/Module/Install/Makefile.pm
 inc/Module/Install/Metadata.pm
 inc/Module/Install/Win32.pm
 inc/Module/Install/WriteAll.pm
+lib/CPAN/Mini/Portable.pm
 lib/Portable.pm
 lib/Portable/Config.pm
 lib/Portable/CPAN.pm
+lib/Portable/HomeDir.pm
+lib/Portable/minicpan.pm
 LICENSE
 Makefile.PL
 MANIFEST			This list of files
@@ -17,6 +20,8 @@ META.yml
 README
 t/01_compile.t
 t/02_simple.t
+t/03_config.t
+t/04_cpan.t
 t/97_meta.t
 t/98_pod.t
 t/99_pmv.t
@@ -26,5 +31,7 @@ t/data/c/lib/tmp.txt
 t/data/cpan/tmp.txt
 t/data/perl/bin/perl.exe
 t/data/perl/lib/strict.pm
+t/data/perl/site/bin/tmp.txt
 t/data/perl/site/lib/tmp.txt
 t/data/portable.perl
+t/minicpan/mirror.yml
