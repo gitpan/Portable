@@ -18,8 +18,9 @@ no_index:
     - inc
     - t
 requires:
+  File::HomeDir: 0.80
   File::Spec: 0.80
   List::Util: 1.19
   Parse::CPAN::Meta: 0.03
   perl: 5.8.0
-version: 0.07
+version: 0.08
