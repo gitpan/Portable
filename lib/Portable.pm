@@ -4,7 +4,7 @@ package Portable;
 
 =head1 NAME
 
-Portable - Perl on a Stick (EXPERIMENTAL)
+Portable - Perl on a Stick (ALPHA)
 
 =head1 SYNOPSIS
 
@@ -54,13 +54,12 @@ more details on how it works...
 use 5.008;
 use strict;
 use warnings;
-# use feature           'state';
 use Carp              ();
 use File::Spec        ();
 use List::Util        ();
 use Parse::CPAN::Meta ();
 
-our $VERSION = '0.10';
+our $VERSION = '0.11';
 
 # This variable is provided exclusively for the
 # use of test scripts.
