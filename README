@@ -12,10 +12,6 @@ SYNOPSIS
       use Portable;
 
 DESCRIPTION
-    THIS MODULE IS HIGHLY EXPERIMENTAL AND SUBJECT TO CHANGE WITHOUT NOTICE.
-
-    YOU HAVE BEEN WARNED!
-
     "Portable" is a term used for applications that are installed onto a
     portable storage device (most commonly a USB memory stick) rather than
     onto a single host.
@@ -41,6 +37,7 @@ DESCRIPTION
     This module is not ready for public use. For now, see the code for more
     details on how it works...
 
+METHODS
 SUPPORT
     Bugs should be reported via the CPAN bug tracker.
 

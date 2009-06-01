@@ -3,11 +3,16 @@ abstract: 'Perl on a Stick (ALPHA)'
 author:
   - 'Adam Kennedy <adamk@cpan.org>'
 build_requires:
-  Class::Inspector: 1.20
+  Class::Inspector: 1.22
+  ExtUtils::MakeMaker: 6.42
+  LWP::Online: 1.07
   Test::Exception: 0.27
   Test::More: 0.42
+  Test::NoWarnings: 0.084
+configure_requires:
+  ExtUtils::MakeMaker: 6.42
 distribution_type: module
-generated_by: 'Module::Install version 0.79'
+generated_by: 'Module::Install version 0.91'
 license: perl
 meta-spec:
   url: http://module-build.sourceforge.net/META-spec-v1.4.html
@@ -19,12 +24,15 @@ no_index:
     - inc
     - t
 requires:
-  CPAN::Mini: 0.570
-  File::HomeDir: 0.80
-  File::Spec: 0.80
-  List::Util: 1.19
-  Parse::CPAN::Meta: 0.03
+  CPAN::Mini: 0.575
+  File::HomeDir::Driver: 0.86
+  File::Spec: 3.29
+  List::Util: 1.21
+  Parse::CPAN::Meta: 1.39
+  Scalar::Util: 1.21
   perl: 5.8.0
 resources:
+  ChangeLog: http://fisheye2.atlassian.com/changelog/cpan/trunk/Portable
   license: http://dev.perl.org/licenses/
-version: 0.12
+  repository: http://svn.ali.as/cpan/trunk/Portable
+version: 0.13
