@@ -24,9 +24,6 @@ t/02_simple.t
 t/03_config.t
 t/04_cpan.t
 t/05_minicpan.t
-t/97_meta.t
-t/98_pod.t
-t/99_pmv.t
 t/data/c/bin/tmp.txt
 t/data/c/include/tmp.txt
 t/data/c/lib/tmp.txt
@@ -37,3 +34,6 @@ t/data/perl/site/bin/tmp.txt
 t/data/perl/site/lib/tmp.txt
 t/data/portable.perl
 t/minicpan/mirror.yml
+xt/meta.t
+xt/pmv.t
+xt/pod.t

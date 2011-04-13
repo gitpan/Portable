@@ -6,7 +6,7 @@ use warnings;
 use Carp            ();
 use File::Spec 3.29 ();
 
-our $VERSION = '0.13';
+our $VERSION = '1.14';
 
 
 
@@ -40,9 +40,9 @@ sub new {
 		my $method = ($key eq 'perlpath') ? 'catfile' : 'catdir';
 		$self->{$key} = File::Spec->$method(
 			$root, split /\//, $conf->{$key},
-		);
+		); #join path to directory of portable perl with value from config file
 	}
-	foreach my $key ( grep { /^ld/ } keys %$self ) {
+	foreach my $key ( grep { /^ld/ } keys %$self ) { #linker config variables
 		next unless defined $self->{$key};
 		$self->{$key} =~ s/\$(\w+)/$self->{$1}/g;
 	}
