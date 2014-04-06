@@ -12,6 +12,7 @@ lib/CPAN/Mini/Portable.pm
 lib/Portable.pm
 lib/Portable/Config.pm
 lib/Portable/CPAN.pm
+lib/Portable/FileSpec.pm
 lib/Portable/HomeDir.pm
 lib/Portable/minicpan.pm
 Makefile.PL
