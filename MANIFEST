@@ -33,5 +33,7 @@ t/data/perl/bin/perl.exe
 t/data/perl/lib/strict.pm
 t/data/perl/site/bin/tmp.txt
 t/data/perl/site/lib/tmp.txt
+t/data/perl/vendor/bin/tmp.txt
+t/data/perl/vendor/lib/tmp.txt
 t/data/portable.perl
 t/minicpan/mirror.yml
