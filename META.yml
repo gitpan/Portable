@@ -26,8 +26,7 @@ no_index:
     - t
 requires:
   CPAN::Mini: 0.575
-  Parse::CPAN::Meta: 1.39
   perl: 5.8.0
 resources:
   license: http://dev.perl.org/licenses/
-version: 1.21
+version: 1.22

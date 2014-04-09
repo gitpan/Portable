@@ -14,7 +14,9 @@ lib/Portable/Config.pm
 lib/Portable/CPAN.pm
 lib/Portable/FileSpec.pm
 lib/Portable/HomeDir.pm
+lib/Portable/LoadYaml.pm
 lib/Portable/minicpan.pm
+LoadYaml.pl
 Makefile.PL
 MANIFEST			This list of files
 META.yml
