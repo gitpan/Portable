@@ -26,10 +26,8 @@ no_index:
     - t
 requires:
   CPAN::Mini: 0.575
-  File::HomeDir::Driver: 0.86
   Parse::CPAN::Meta: 1.39
-  Scalar::Util: 1.21
   perl: 5.8.0
 resources:
   license: http://dev.perl.org/licenses/
-version: 1.20
+version: 1.21
